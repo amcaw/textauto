@@ -18,8 +18,8 @@ df.dropna(subset = ['DATE'], inplace=True)
 df = pd.merge(df,df2,on='DATE')
 deces = df.iloc[0,4]
 deces_total = df.iloc[0,3]
-df4 = (F"Décès : {deces} personnes sont décédées en moyenne des suites du virus. Depuis le début de l'épidémie, {deces_total} personnes sont mortes du coronavirus.")
-df4.to_csv("./test.csv")
+df = (F"Décès : {deces} personnes sont décédées en moyenne des suites du virus. Depuis le début de l'épidémie, {deces_total} personnes sont mortes du coronavirus.")
+df.to_csv("./test.csv")
 
 
 
