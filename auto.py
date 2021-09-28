@@ -19,7 +19,7 @@ df = pd.merge(df,df2,on='DATE')
 deces = df.iloc[0,4]
 deces_total = df.iloc[0,3]
 df = (F"Décès : {deces} personnes sont décédées en moyenne des suites du virus. Depuis le début de l'épidémie, {deces_total} personnes sont mortes du coronavirus.")
-df.to_csv("./test.csv")
+df.to_csv("test.txt", header=None, index=None, sep=',', mode='w')
 
 
 
