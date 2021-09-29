@@ -94,6 +94,6 @@ df4 = (F"<strong>Cas détectés¹</strong> : {date_cas},<strong>{cas}</strong> n
 
 
 text = ""
-with open('file.md', 'w') as md:
+with open('README.md', 'w') as md:
     md.write(df4)
 
