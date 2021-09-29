@@ -129,6 +129,8 @@ df_pos['tests5'] = df_pos['tests5'].str.replace('.',',')
 df_RT = df_RT[['DATE', 'Rt']]
 df_RT['DATE'] = df_RT['DATE'].tail(1)
 df_RT.dropna(subset = ['DATE'], inplace=True)
+df_RT['Rt'] = df_RT['Rt'].astype(str)
+df_RT['Rt'] = df_RT['Rt'].str.replace('.',',')
 
 #création du texte
 
