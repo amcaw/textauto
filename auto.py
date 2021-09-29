@@ -20,5 +20,5 @@ deces = df.iloc[0,4]
 deces_total = df.iloc[0,3]
 df = (F"Décès : {deces} personnes sont décédées en moyenne des suites du virus. Depuis le début de l'épidémie, {deces_total} personnes sont mortes du coronavirus.")
 text = ""
-with open('./readme.md', 'w') as md:
-    md.write(df4)
+with open('./README.md', 'w') as md:
+    md.write(df)
