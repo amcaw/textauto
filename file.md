@@ -1,0 +1,1 @@
+<strong>Décès</strong> : entre le 19/09 et le 25/09, 7 personnes sont décédées en moyenne des suites du virus. Depuis le début de l'épidémie, 25.581 personnes sont mortes du coronavirus.
