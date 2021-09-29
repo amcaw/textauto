@@ -26,7 +26,6 @@ df_astuce = pd.DataFrame(df_astuce)
 df_astuce['CASES'] = 0
 df_astuce['DEATHS'] = 0
 df_astuce = df_astuce.tail(1)
-display(df_astuce)
 
 
 # In[124]:
@@ -50,7 +49,6 @@ df_deces['deces2'] = float(df_deces['deces2'])
 df_deces['deces1'] = df_deces['deces1'].map('{: ,.0f}'.format)
 df_deces['deces2'] = df_deces['deces2'].map('{: ,.0f}'.format)
 df_deces['deces1'] = df_deces['deces1'].str.replace(',','.')
-display(df_deces)
 
 
 # In[125]:
@@ -75,7 +73,6 @@ df_cas['Cas2'] = df_cas['Cas2'].map('{:+,.0f}'.format)
 df_cas['Cas1'] = df_cas['Cas1'].str.replace(',','')
 df_cas['Cas2'] = df_cas['Cas2'].replace({'\+':'une hausse de '}, regex = True)
 df_cas['Cas2'] = df_cas['Cas2'].replace({'\-':'une baisse de '}, regex = True)
-display(df_cas)
 
 
 # In[127]:
@@ -91,40 +88,9 @@ deces_total = df_deces.iloc[0,2]
 
 
 df4 = (F"<strong>Cas détectés¹</strong> : {date_cas},<strong>{cas}</strong> nouvelles infections au coronavirus ont été détectées en moyenne chaque jour. C'est {cas_pc}% par rapport à la semaine précédente.<p></p><strong>Décès</strong> : {date_deces},{deces} personnes sont décédées en moyenne des suites du virus. Depuis le début de l'épidémie,{deces_total} personnes sont mortes du coronavirus.")
-print(df4)
 
 
 # In[ ]:
-
-
-
-
-
-# In[140]:
-
-
-
-
-
-# In[141]:
-
-
-
-
-
-# In[142]:
-
-
-
-
-
-# In[143]:
-
-
-
-
-
-# In[135]:
 
 
 text = ""
