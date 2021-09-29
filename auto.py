@@ -5,7 +5,7 @@ import pandas as pd
 from datetime import datetime
 df_deces = pd.read_csv ('https://epistat.sciensano.be/Data/COVID19BE_MORT.csv')
 df_cas = pd.read_csv ('https://epistat.sciensano.be/Data/COVID19BE_CASES_AGESEX.csv')
-df_date = pd.read_csv ('https://app.workbenchdata.com/workflows/146407/steps/step-4iDaSZZRjoSs/current-result-table.csv')
+df_date = pd.read_csv ('https://raw.githubusercontent.com/amcaw/textauto/main/dates.csv')
 df_test = pd.read_csv ('https://epistat.sciensano.be/Data/COVID19BE_tests.csv')
 df_admissions = pd.read_csv ('https://epistat.sciensano.be/Data/COVID19BE_HOSP.csv')
 df_hospi = pd.read_csv ('https://epistat.sciensano.be/Data/COVID19BE_HOSP.csv')
