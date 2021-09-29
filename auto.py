@@ -12,7 +12,7 @@ df_hospi = pd.read_csv ('https://epistat.sciensano.be/Data/COVID19BE_HOSP.csv')
 df_pos = pd.read_csv ('https://epistat.sciensano.be/Data/COVID19BE_tests.csv')
 df_RT = pd.read_csv ('https://raw.githubusercontent.com/amcaw/reproduction_rate/main/result.csv')
 
-# astuce pour éviter un trou dans les dates
+# Astuce pour éviter un trou dans les dates
 
 df_astuce = df_RT
 df_astuce = pd.DataFrame(df_astuce)
@@ -20,7 +20,7 @@ df_astuce['CASES'] = 0
 df_astuce['DEATHS'] = 0
 df_astuce = df_astuce.tail(1)
 
-#Calcul des décès
+# Calcul des décès
 
 df_deces = pd.concat([df_deces,df_astuce], join="outer", sort=False)
 df_deces = df_deces[['DATE', 'DEATHS']]
@@ -40,7 +40,7 @@ df_deces['deces1'] = df_deces['deces1'].map('{: ,.0f}'.format)
 df_deces['deces2'] = df_deces['deces2'].map('{: ,.0f}'.format)
 df_deces['deces1'] = df_deces['deces1'].str.replace(',','.')
 
-#Calcul des cas
+# Calcul des cas
 df_cas = pd.concat([df_cas,df_astuce], join="outer", sort=False)
 df_cas = df_cas[['DATE', 'CASES']]
 df_cas = df_cas.groupby(['DATE'], as_index=False)['CASES'].sum()
@@ -61,7 +61,7 @@ df_cas['Cas1'] = df_cas['Cas1'].str.replace(',','')
 df_cas['Cas2'] = df_cas['Cas2'].replace({'\+':'une hausse de '}, regex = True)
 df_cas['Cas2'] = df_cas['Cas2'].replace({'\-':'une baisse de '}, regex = True)
 
-#Calcul des tests
+# Calcul des tests
 df_test = df_test[['DATE', 'TESTS_ALL']]
 df_test = df_test.groupby(['DATE'], as_index=False)['TESTS_ALL'].sum()
 df_test['tests1'] = (df_test['TESTS_ALL'].rolling(window=7).mean()).round(0)
@@ -77,7 +77,7 @@ df_test['tests1'] = df_test['tests1'].str.replace(',','.')
 df_test['tests2'] = df_test['tests2'].replace({'\+':'en hausse de '}, regex = True)
 df_test['tests2'] = df_test['tests2'].replace({'\-':'en baisse de '}, regex = True)
 
-#Calcul des admissions
+# Calcul des admissions
 df_admissions = df_admissions[['DATE', 'NEW_IN']]
 df_admissions = df_admissions.groupby(['DATE'], as_index=False)['NEW_IN'].sum()
 df_admissions['hospi'] = df_admissions['NEW_IN'].cumsum()
@@ -94,7 +94,7 @@ df_admissions['hospi1'] = df_admissions['hospi1'].replace({'\.':','}, regex = Tr
 df_admissions['hospi3'] = df_admissions['hospi3'].replace({'\+':'une augmentation de '}, regex = True)
 df_admissions['hospi3'] = df_admissions['hospi3'].replace({'\-':'une diminution de '}, regex = True)
 
-#Calcul des hospitalisations
+# Calcul des hospitalisations
 df_hospi1 = df_hospi[['DATE', 'TOTAL_IN']]
 df_hospi2 = df_hospi[['DATE', 'TOTAL_IN_ICU']]
 df_hospi1 = df_hospi1.groupby(['DATE'], as_index=False)['TOTAL_IN'].sum()
@@ -103,7 +103,7 @@ df_hospi = pd.merge(df_hospi1, df_hospi2)
 df_hospi['DATE'] = df_hospi['DATE'].tail(1)
 df_hospi.dropna(subset = ['DATE'], inplace=True)
 
-#Calcul du taux de positivité
+# Calcul du taux de positivité
 df_pos1 = df_pos[['DATE', 'TESTS_ALL']]
 df_pos2 = df_pos[['DATE', 'TESTS_ALL_POS']]
 df_pos1 = df_pos1.groupby(['DATE'], as_index=False)['TESTS_ALL'].sum()
@@ -125,14 +125,14 @@ df_pos['tests4'] = df_pos['tests4'].replace({'\-':'en baisse de '}, regex = True
 df_pos['tests5'] = df_pos['tests3'].astype(str)
 df_pos['tests5'] = df_pos['tests5'].str.replace('.',',')
 
-#Calcul du Rt
+# Calcul du Rt
 df_RT = df_RT[['DATE', 'Rt']]
 df_RT['DATE'] = df_RT['DATE'].tail(1)
 df_RT.dropna(subset = ['DATE'], inplace=True)
 df_RT['Rt'] = df_RT['Rt'].astype(str)
 df_RT['Rt'] = df_RT['Rt'].str.replace('.',',')
 
-#création du texte
+# Création du texte
 
 date_cas = df_cas.iloc[0,6]
 cas = df_cas.iloc[0,4]
