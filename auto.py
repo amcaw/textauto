@@ -37,8 +37,9 @@ df_deces = pd.merge(df_deces, df_date)
 df_deces['deces1'] = float(df_deces['deces1'])
 df_deces['deces2'] = float(df_deces['deces2'])
 df_deces['deces1'] = df_deces['deces1'].map('{: ,.0f}'.format)
-df_deces['deces2'] = df_deces['deces2'].map('{: ,.0f}'.format)
+df_deces['deces2'] = df_deces['deces2'].map('{: ,.1f}'.format)
 df_deces['deces1'] = df_deces['deces1'].str.replace(',','.')
+df_deces['deces2'] = df_deces['deces2'].str.replace('.',',')
 
 # Calcul des cas
 df_cas = pd.concat([df_cas,df_astuce], join="outer", sort=False)
