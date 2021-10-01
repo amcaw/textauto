@@ -14,7 +14,7 @@ df_RT = pd.read_csv ('https://raw.githubusercontent.com/amcaw/reproduction_rate/
 
 # Pour afficher la date de mise à jour
 
-df_maj = datetime.today().strftime("%d/%m/%Y")
+df_maj = datetime.today().strftime("%d/%m/%Y à %Hh%M")
 
 # Astuce pour éviter un trou dans les dates
 
