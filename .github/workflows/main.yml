@@ -1,9 +1,10 @@
 name: Robot
 
 
-# Controls when the action will run
+# Cron pour faire fonctionner le script à 5h45 du mardi au samedi
 on:
-  push:
+  schedule:
+  - cron: "45 3 * * 2-6"
   
 jobs:
   build:
