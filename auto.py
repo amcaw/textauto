@@ -97,6 +97,7 @@ df_admissions = pd.merge(df_admissions, df_date)
 df_admissions['hospi1'] = df_admissions['hospi1'].map('{: ,.1f}'.format)
 df_admissions['hospi3'] = df_admissions['hospi3'].map('{:+,.0f}'.format)
 df_admissions['hospi1'] = df_admissions['hospi1'].replace({'\.':','}, regex = True)
+df_admissions['hospi1'] = df_admissions['hospi1'].str.replace(',0','')
 df_admissions['hospi3'] = df_admissions['hospi3'].replace({'\+':'une augmentation de '}, regex = True)
 df_admissions['hospi3'] = df_admissions['hospi3'].replace({'\-':'une diminution de '}, regex = True)
 
@@ -130,6 +131,8 @@ df_pos['tests4'] = df_pos['tests4'].replace({'\+':'en hausse de '}, regex = True
 df_pos['tests4'] = df_pos['tests4'].replace({'\-':'en baisse de '}, regex = True)
 df_pos['tests5'] = df_pos['tests3'].astype(str)
 df_pos['tests5'] = df_pos['tests5'].str.replace('.',',')
+df_pos['tests5'] = df_pos['tests5'].str.replace(',0','')
+
 
 # Calcul du Rt
 df_RT = df_RT[['DATE', 'Rt']]
