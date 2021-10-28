@@ -132,6 +132,7 @@ df_pos['tests4'] = df_pos['tests4'].replace({'\-':'en baisse de '}, regex = True
 df_pos['tests5'] = df_pos['tests3'].astype(str)
 df_pos['tests5'] = df_pos['tests5'].str.replace('.',',')
 df_pos['tests5'] = df_pos['tests5'].str.replace(',0','')
+df_pos['tests4'] = df_pos['tests4'].str.replace(',0','')
 
 
 # Calcul du Rt
