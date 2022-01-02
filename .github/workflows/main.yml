@@ -44,4 +44,4 @@ jobs:
         with:
           token: ${{ secrets.SLACK_TOKEN }}
           path: README.md
-          channel: test
+          channel: C02SETQTFQB
