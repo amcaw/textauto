@@ -16,7 +16,7 @@ jobs:
           timezoneLinux: "Europe/Paris"
     
       - name: checkout repo content
-        uses: actions/checkout@v2 # checkout the repository content to github runnerzzz
+        uses: actions/checkout@v2 # checkout the repository content to github runnerzz
 
       - name: setup python
         uses: actions/setup-python@v2
