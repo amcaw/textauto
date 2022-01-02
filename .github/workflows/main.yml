@@ -3,8 +3,7 @@ name: Robot
 
 # Cron pour faire fonctionner le script à 5h45 du mardi au samedi
 on:
-  schedule:
-    - cron: "45 4 * * 2-6"
+  push:
 
 jobs:
   build:
@@ -39,3 +38,10 @@ jobs:
           git add --all
           git commit -am "add data"
           git push
+          
+      - name: Upload to slack step
+        uses: adrey/slack-file-upload-action@master
+        with:
+          token: ${{ secrets.SLACK_TOKEN }}
+          path: README.md
+          channel: test
