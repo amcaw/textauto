@@ -1,7 +1,7 @@
 name: Robot
 
 
-# Cron pour faire fonctionner le script à 5h45 du mardi au samedi
+# Cron pour faire fonctionner le script à 5h45 du mardi au samediiii
 on:
   push:
 
