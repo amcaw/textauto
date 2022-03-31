@@ -4,7 +4,7 @@ name: Robot
 # Cron pour faire fonctionner le script à 5h45 du mardi au samediiii
 on:
  schedule:
-  - cron: "45 4 * * 2-6"
+  - cron: "45 4 * * 2,5"
 
 jobs:
   build:
